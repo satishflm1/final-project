@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiggy-orange: #FC8019;
+  --swiggy-orange-light: #FE9A3E;
+  --text-dark: #3d4152;
+  --text-light: #686b78;
+}
+
+/* Remove the conflicting body style from base layer */
+@layer base {
+  html {
+    background-color: #f1f1f6;
+  }
+}
+
+body {
+  background-color: #f1f1f6;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+.content-container {
+  @apply max-w-7xl mx-auto px-4 py-8;
+}
+
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-md p-6;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-number {
+  @apply text-5xl font-bold mb-2;
+  color: var(--swiggy-orange);
+}
+
+.dashboard-label {
+  @apply text-sm font-medium;
+  color: var(--text-light);
+}
+
+.search-container {
+  @apply flex items-center gap-4 mb-8;
+}
+
+.search-input {
+  @apply w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  @apply bg-[#FC8019] text-white font-medium px-6 py-2 rounded-lg hover:bg-[#FE9A3E] transition-colors;
+}
+
+.nav-container {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add white background to specific container areas */
+.main-content {
+  @apply bg-white rounded-lg shadow-md p-6 mt-8;
+  min-height: calc(100vh - 200px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-[#FC8019] hover:bg-gray-50 focus:ring-[#FC8019];
+  }
+  
+  .input {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FC8019] focus:ring-[#FC8019] sm:text-sm;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-[#3d4152];
+  }
+} 
