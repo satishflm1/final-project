@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -12,7 +13,7 @@ const TaxPage = () => {
 
   const fetchTaxes = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/taxes');
+      const response = await axios.get('http://3.109.143.125/api/taxes');
       setTaxes(response.data);
     } catch (error) {
       console.error('Error fetching taxes:', error);
@@ -22,7 +23,7 @@ const TaxPage = () => {
   const handleAddTax = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/taxes', newTax);
+      await axios.post('http://3.109.143.125/api/taxes', newTax);
       setNewTax({ tax_name: '', percentage: '' });
       fetchTaxes();
     } catch (error) {
@@ -34,7 +35,7 @@ const TaxPage = () => {
   const handleUpdateTax = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/taxes/${editingTax.id}`, editingTax);
+      await axios.put(`http://3.109.143.125/api/taxes/${editingTax.id}`, editingTax);
       setEditingTax(null);
       fetchTaxes();
     } catch (error) {
@@ -46,7 +47,7 @@ const TaxPage = () => {
   const handleDeleteTax = async (taxId) => {
     if (window.confirm('Are you sure you want to delete this tax?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/taxes/${taxId}`);
+        await axios.delete(`http://3.109.143.125/api/taxes/${taxId}`);
         fetchTaxes();
       } catch (error) {
         console.error('Error deleting tax:', error);
