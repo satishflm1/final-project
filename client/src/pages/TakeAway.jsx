@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
 
-const API_BASE_URL = 'http://192.168.1.41:5000';
-const FRONTEND_BASE_URL = 'http://192.168.1.41:3000';
+const API_BASE_URL = 'http://3.109.143.125';
+const FRONTEND_BASE_URL = 'http://3.109.143.125:8080';
 
 const TakeAway = () => {
   const [categories, setCategories] = useState([]);
