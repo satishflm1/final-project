@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -19,7 +20,7 @@ const Menu = ({ onAddToCart }) => {
     const fetchCategories = async () => {
         try {
             console.log('Menu: Fetching categories...'); // Debug log
-            const response = await axios.get('http://localhost:5000/api/categories', {
+            const response = await axios.get('http://3.109.143.125/api/categories', {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
@@ -37,7 +38,7 @@ const Menu = ({ onAddToCart }) => {
     const fetchAllDishes = async () => {
         try {
             console.log('Menu: Fetching dishes...'); // Debug log
-            const response = await axios.get('http://localhost:5000/api/dishes', {
+            const response = await axios.get('http://3.109.143.125/api/dishes', {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
