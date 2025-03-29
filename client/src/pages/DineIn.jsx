@@ -1,11 +1,12 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = 'http://192.168.1.41:5000';
-const FRONTEND_BASE_URL = 'http://192.168.1.41:3000';
+const API_BASE_URL = 'http://3.109.143.125';
+const FRONTEND_BASE_URL = 'http://3.109.143.125';
 
 const DineIn = () => {
   const [tables, setTables] = useState([]);
