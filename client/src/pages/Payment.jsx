@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://3.109.143.125';
+const API_BASE_URL = 'http://3.110.210.194';
 
 const Payment = () => {
   const { orderId } = useParams();
