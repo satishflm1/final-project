@@ -73,17 +73,17 @@ const Dishes = () => {
     }
   };
 
-  // const toggleAvailability = async (dishId, currentStatus) => {
-  //   try {
-  //     await axios.put('http://3.110.210.194/api/dishes/${dishId}', {
-  //       available: !currentStatus
-  //     });
-  //     fetchData();
-  //   } catch (error) {
-  //     console.error('Error updating dish availability:', error);
-  //     alert('Failed to update dish availability');
-  //   }
-  // };
+  const toggleAvailability = async (dishId, currentStatus) => {
+    try {
+      await axios.put(`${API_BASE_URL}/api/dishes/${dishId}`, {
+        available: !currentStatus
+      });
+      fetchData();
+    } catch (error) {
+      console.error('Error updating dish availability:', error);
+      alert('Failed to update dish availability');
+    }
+  };
 
   return (
     <div className="p-6">
