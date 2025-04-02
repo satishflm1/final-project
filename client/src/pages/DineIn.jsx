@@ -5,7 +5,8 @@ import { QRCodeSVG } from 'qrcode.react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = 'http://3.109.143.125';
+
+const API_BASE_URL = 'http://3.110.210.194';
 const FRONTEND_BASE_URL = 'http://3.109.143.125';
 
 const DineIn = () => {
