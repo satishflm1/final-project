@@ -13,7 +13,7 @@ const TaxPage = () => {
 
   const fetchTaxes = async () => {
     try {
-      const response = await axios.get('${API_BASE_URL}/api/taxes');
+      const response = await axios.get(`${API_BASE_URL}/api/taxes`);
       setTaxes(response.data);
     } catch (error) {
       console.error('Error fetching taxes:', error);
@@ -23,7 +23,7 @@ const TaxPage = () => {
   const handleAddTax = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('${API_BASE_URL}/api/taxes', newTax);
+      await axios.post(`${API_BASE_URL}/api/taxes`, newTax);
       setNewTax({ tax_name: '', percentage: '' });
       fetchTaxes();
     } catch (error) {
