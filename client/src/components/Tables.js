@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const API_BASE_URL = "http://3.110.210.194/api/"
 const Tables = ({ onTableSelect, selectedTableId }) => {
     const [tables, setTables] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ const Tables = ({ onTableSelect, selectedTableId }) => {
 
     const fetchTables = async () => {
         try {
-            const response = await axios.get('http://3.109.143.125/api/tables', {
+            const response = await axios.get('${API_BASE_URL}tables', {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
