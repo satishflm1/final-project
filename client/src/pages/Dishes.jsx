@@ -21,8 +21,8 @@ const Dishes = () => {
   const fetchData = async () => {
     try {
       const [dishesRes, categoriesRes] = await Promise.all([
-        axios.get('${API_BASE_URL}/api/dishes'),
-        axios.get('${API_BASE_URL}/api/categories')
+        axios.get(`${API_BASE_URL}/api/dishes`),
+        axios.get(`${API_BASE_URL}/api/categories`)
       ]);
       setDishes(dishesRes.data);
       setCategories(categoriesRes.data);
@@ -34,7 +34,7 @@ const Dishes = () => {
   const handleAddDish = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('${API_BASE_URL}/api/dishes', newDish);
+      await axios.post(`${API_BASE_URL}/api/dishes`, newDish);
       setNewDish({
         name: '',
         category_id: '',
