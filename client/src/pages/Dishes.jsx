@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const API_BASE_URL = 'http://3.110.210.194';
 const Dishes = () => {
   const [dishes, setDishes] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -21,8 +21,8 @@ const Dishes = () => {
   const fetchData = async () => {
     try {
       const [dishesRes, categoriesRes] = await Promise.all([
-        axios.get('http://3.109.143.125/api/dishes'),
-        axios.get('http://3.109.143.125/api/categories')
+        axios.get('${API_BASE_URL}/api/dishes'),
+        axios.get('${API_BASE_URL}/api/categories')
       ]);
       setDishes(dishesRes.data);
       setCategories(categoriesRes.data);
@@ -34,7 +34,7 @@ const Dishes = () => {
   const handleAddDish = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://3.109.143.125/api/dishes', newDish);
+      await axios.post('${API_BASE_URL}/api/dishes', newDish);
       setNewDish({
         name: '',
         category_id: '',
@@ -52,7 +52,7 @@ const Dishes = () => {
   const handleUpdateDish = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://3.109.143.125/api/dishes/${editingDish.id}`, editingDish);
+      await axios.put(`${API_BASE_URL}/api/dishes/${editingDish.id}`, editingDish);
       setEditingDish(null);
       fetchData();
     } catch (error) {
@@ -64,7 +64,7 @@ const Dishes = () => {
   const handleDeleteDish = async (dishId) => {
     if (window.confirm('Are you sure you want to delete this dish?')) {
       try {
-        await axios.delete(`http://3.109.143.125/api/dishes/${dishId}`);
+        await axios.delete(`${API_BASE_URL}/api/dishes/${dishId}`);
         fetchData();
       } catch (error) {
         console.error('Error deleting dish:', error);
@@ -75,7 +75,7 @@ const Dishes = () => {
 
   const toggleAvailability = async (dishId, currentStatus) => {
     try {
-      await axios.put(`http://3.109.143.125/api/dishes/${dishId}`, {
+      await axios.put(`${API_BASE_URL}/api/dishes/${dishId}`, {
         available: !currentStatus
       });
       fetchData();
