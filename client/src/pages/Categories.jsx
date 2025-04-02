@@ -12,7 +12,7 @@ const CategoryPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('${API_BASE_URL}/api/categories');
+      const response = await axios.get(`${API_BASE_URL}/api/categories`);
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -22,7 +22,7 @@ const CategoryPage = () => {
   const handleAddCategory = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('${API_BASE_URL}/api/categories', newCategory);
+      await axios.post(`${API_BASE_URL}/api/categories`, newCategory);
       setNewCategory({ name: '' });
       fetchCategories();
     } catch (error) {
