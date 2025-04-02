@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://3.110.210.194';
+const API_BASE_URL = 'http://3.110.210.194' ;
+
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
