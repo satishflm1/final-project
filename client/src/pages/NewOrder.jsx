@@ -19,9 +19,9 @@ const NewOrder = () => {
   const fetchData = async () => {
     try {
       const [tablesRes, categoriesRes, dishesRes] = await Promise.all([
-        axios.get('${API_BASE_URL}/api/tables'),
-        axios.get('${API_BASE_URL}/api/categories'),
-        axios.get('${API_BASE_URL}/api/dishes')
+        axios.get(`${API_BASE_URL}/api/tables`),
+        axios.get(`${API_BASE_URL}/api/categories`),
+        axios.get(`${API_BASE_URL}/api/dishes`)
       ]);
       setTables(tablesRes.data);
       setCategories(categoriesRes.data);
@@ -81,7 +81,7 @@ const NewOrder = () => {
         } : {})
       };
 
-      await axios.post('${API_BASE_URL}/api/orders', orderData);
+      await axios.post(`${API_BASE_URL}/api/orders`, orderData);
       
       // Reset form
       setCart([]);
