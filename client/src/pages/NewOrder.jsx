@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const API_BASE_URL = 'http://3.110.210.194';
 const NewOrder = () => {
   const [tables, setTables] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -19,9 +19,9 @@ const NewOrder = () => {
   const fetchData = async () => {
     try {
       const [tablesRes, categoriesRes, dishesRes] = await Promise.all([
-        axios.get('http://3.109.143.125/api/tables'),
-        axios.get('http://3.109.143.125/api/categories'),
-        axios.get('http://3.109.143.125/api/dishes')
+        axios.get('${API_BASE_URL}/api/tables'),
+        axios.get('${API_BASE_URL}/api/categories'),
+        axios.get('${API_BASE_URL}/api/dishes')
       ]);
       setTables(tablesRes.data);
       setCategories(categoriesRes.data);
@@ -81,7 +81,7 @@ const NewOrder = () => {
         } : {})
       };
 
-      await axios.post('http://3.109.143.125/api/orders', orderData);
+      await axios.post('${API_BASE_URL}/api/orders', orderData);
       
       // Reset form
       setCart([]);
