@@ -75,7 +75,7 @@ const Dishes = () => {
 
   const toggleAvailability = async (dishId, currentStatus) => {
     try {
-      await axios.put(`${API_BASE_URL}/api/dishes/${dishId}`, {
+      await axios.put('http://3.110.210.194/api/dishes/${dishId}', {
         available: !currentStatus
       });
       fetchData();
