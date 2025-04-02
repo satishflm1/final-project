@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
-const API_BASE_URL = 'http://3.110.210.194';
+const API_BASE_URL = 'http://3.7.47.120';
 
 const BillDetails = () => {
   const { orderId } = useParams();
