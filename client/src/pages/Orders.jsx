@@ -13,14 +13,26 @@ const Orders = () => {
     fetchOrders();
   }, []);
 
-  const fetchOrders = async () => {
+  // const fetchOrders = async () => {
+  //   try {
+  //     const response = await axios.get(`${API_BASE_URL}/api/orders`);
+  //     setOrders(response.data);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.error('Error fetching orders:', error);
+  //     setError('Failed to load orders');
+  //     setLoading(false);
+  //   }
+  // };
+
+    const fetchOrders = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/api/orders`);
       setOrders(response.data);
-      setLoading(false);
     } catch (error) {
       console.error('Error fetching orders:', error);
       setError('Failed to load orders');
+    } finally {
       setLoading(false);
     }
   };
