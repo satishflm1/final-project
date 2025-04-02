@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const API_BASE_URL = "http://3.110.210.194/api/";
 const Tables = ({ onTableSelect, selectedTableId }) => {
     const [tables, setTables] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const Tables = ({ onTableSelect, selectedTableId }) => {
 
     const fetchTables = async () => {
         try {
-            const response = await axios.get('http://3.109.143.125/api/tables', {
+            const response = await axios.get(${API_BASE_URL}tables', {
                 headers: { 'Cache-Control': 'no-cache' }
             });
             setTables(response.data);
@@ -53,7 +53,7 @@ const Tables = ({ onTableSelect, selectedTableId }) => {
         
         try {
             if (table.id !== selectedTableId) {
-                await axios.patch(`http://3.109.143.125/api/tables/${table.id}/status`, {
+                await axios.patch(`${API_BASE_URL}tables/${table.id}/status`, {
                     status: 'occupied'
                 });
                 onTableSelect(table);
@@ -68,7 +68,7 @@ const Tables = ({ onTableSelect, selectedTableId }) => {
     const resetTables = async () => {
         try {
             setRefreshing(true);
-            await axios.post('http://3.109.143.125/api/tables/reset');
+            await axios.post('${API_BASE_URL}tables/reset');
             await fetchTables();
             setError(null);
         } catch (err) {
