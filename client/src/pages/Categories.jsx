@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const API_BASE_URL = 'http://3.110.210.194';
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [newCategory, setNewCategory] = useState({ name: '' });
@@ -12,7 +12,7 @@ const CategoryPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://3.109.143.125/api/categories');
+      const response = await axios.get(${API_BASE_URL}/api/categories');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
