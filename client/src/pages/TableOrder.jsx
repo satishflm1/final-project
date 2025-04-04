@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
 
-const API_BASE_URL = 'http://3.7.47.120';
-const FRONTEND_BASE_URL = 'http://3.7.47.120:8080';
+const API_BASE_URL = 'http://15.207.252.191';
+const FRONTEND_BASE_URL = 'http://'15.207.252.191:3000;
 
 const TableOrder = () => {
   const { tableId } = useParams();
