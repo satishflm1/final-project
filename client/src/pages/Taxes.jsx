@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const API_BASE_URL = 'http://15.207.252.191';
+const API_BASE_URL = 'http://15.207.252.191:5000';
 const TaxPage = () => {
   const [taxes, setTaxes] = useState([]);
   const [newTax, setNewTax] = useState({ tax_name: '', percentage: '' });
