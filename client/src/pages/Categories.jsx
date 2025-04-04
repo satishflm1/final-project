@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const API_BASE_URL = 'http://15.207.252.191';
+const API_BASE_URL = 'http://15.207.252.191:5000';
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [newCategory, setNewCategory] = useState({ name: '' });
