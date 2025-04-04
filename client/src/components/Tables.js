@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const API_BASE_URL = "http://3.110.210.194/api/";
+const API_BASE_URL = "http://15.207.252.191/api/";
 
 const Tables = ({ onTableSelect, selectedTableId }) => {
     const [tables, setTables] = useState([]);
