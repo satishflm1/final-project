@@ -1,32 +1,28 @@
-version: "3"
+version: "3.8"
 services:
   database:
     image: mysql:latest
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: admin#123
-      MYSQL_USER: admin
-      MYSQL_DATABASE: mydatabase
-      MYSQL_PASSWORD: admin#123
+      MYSQL_ROOT_PASSWORD: Satish#3035
+      MYSQL_USER: admin_35
+      MYSQL_DATABASE: dragon_1
+      MYSQL_PASSWORD: Satish#3035
   backend:
     build: ./server
-    deploy:
-      replicas: 3
     ports:
-      - "5000"
+      - "5000:5000"
     environment:
-      - DB_HOST=database-1.ctyigwe2yzsx.us-east-2.rds.amazonaws.com
-      - DB_USER=admin
-      - DB_NAME=mydatabase
-      - DB_PASSWORD=admin#123
+      - DB_HOST=database-1.cp08iisywcke.ap-south-1.rds.amazonaws.com
+      - DB_USER=admin_35
+      - DB_NAME=dragon_1
+      - DB_PASSWORD=Satish#3035
     depends_on:
       - database
   frontend:
     build: ./client
-    deploy:
-      replicas: 3
     ports:
-      - "80"
+      - "3000:80"
     depends_on:
       - backend
