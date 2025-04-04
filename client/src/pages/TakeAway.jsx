@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
 
-const API_BASE_URL = 'http://15.207.252.191';
+const API_BASE_URL = 'http://15.207.252.191:5000';
 const FRONTEND_BASE_URL = 'http://15.207.252.191:3000';
 
 const TakeAway = () => {
