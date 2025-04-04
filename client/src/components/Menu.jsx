@@ -20,7 +20,7 @@ const Menu = ({ onAddToCart }) => {
     const fetchCategories = async () => {
         try {
             console.log('Menu: Fetching categories...'); // Debug log
-            const response = await axios.get('http://15.207.252.191/api/categories', {
+            const response = await axios.get('http://15.207.252.191:5000/api/categories', {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
@@ -38,7 +38,7 @@ const Menu = ({ onAddToCart }) => {
     const fetchAllDishes = async () => {
         try {
             console.log('Menu: Fetching dishes...'); // Debug log
-            const response = await axios.get('http://15.207.252.191/api/dishes', {
+            const response = await axios.get('http://15.207.252.191:5000/api/dishes', {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
