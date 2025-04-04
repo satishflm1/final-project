@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const API_BASE_URL = 'http://15.207.252.191';
+const API_BASE_URL = 'http://15.207.252.191:5000';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
