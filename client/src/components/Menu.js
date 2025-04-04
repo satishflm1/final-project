@@ -16,7 +16,7 @@ const Menu = ({ onAddToCart }) => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://15.207.252.191/api/categories');
+            const response = await axios.get('http://15.207.252.191:5000/api/categories');
             // Transform the categories data to include 'All Items' and extract names
             const transformedCategories = [
                 { id: 'all', name: 'All Items' },
@@ -32,7 +32,7 @@ const Menu = ({ onAddToCart }) => {
 
     const fetchDishes = async () => {
         try {
-            const response = await axios.get('http://15.207.252.191/api/dishes');
+            const response = await axios.get('http://15.207.252.191:5000/api/dishes');
             setDishes(response.data);
             setError(null);
         } catch (error) {
